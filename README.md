@@ -60,6 +60,9 @@ Run tests
 Build Docker image
 Push to DockerHub
 ```
+## Arquitectura (Flowchart)
+
+```mermaid
 flowchart TD
     A[Developer] -->|git push| B[GitHub Repository]
     B -->|GitHub Actions CI/CD| C[CI/CD Pipeline]
@@ -85,4 +88,4 @@ flowchart TD
 
     F --> G[Prometheus + Grafana (Optional)]
     G --> H[Monitoring Dashboard & Alerts]
-
+```
