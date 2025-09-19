@@ -60,7 +60,7 @@ Run tests
 Build Docker image
 Push to DockerHub
 ```
-## Arquitectura (Flowchart)
+## Architecture (Flowchart)
 
 ```mermaid
 flowchart TD
