@@ -83,7 +83,7 @@ flowchart TD
 
     subgraph F[Backend Container]
         F1[Node.js + Express App]
-        F2[/health, /items, /metrics]
+        F2[Endpoints: health, items, metrics]
     end
 
     F --> G[Prometheus + Grafana]
