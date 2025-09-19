@@ -38,7 +38,7 @@ package.json
 ## 🚀 How to Run Locally
 ```bash
 # Clone repo
-git clone https://github.com/YOUR_USERNAME/project-backend.git
+git clone https://github.com/GhostGto/project-backend.git
 cd project-backend
 
 # Install dependencies
