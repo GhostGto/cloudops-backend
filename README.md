@@ -86,6 +86,6 @@ flowchart TD
         F2[/health, /items, /metrics]
     end
 
-    F --> G[Prometheus + Grafana (Optional)]
+    F --> G[Prometheus + Grafana]
     G --> H[Monitoring Dashboard & Alerts]
 ```
