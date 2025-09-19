@@ -60,44 +60,29 @@ Run tests
 Build Docker image
 Push to DockerHub
 ```
-   [Developer]
-       |
-       | git push
-       v
-[GitHub Repository]
-       |
-       | GitHub Actions CI/CD
-       v
-+-----------------------+
-|   CI/CD Pipeline      |
-|-----------------------|
-| 1. Checkout Code      |
-| 2. Setup Node.js      |
-| 3. Install deps       |
-| 4. Run tests          |
-| 5. Build Docker image |
-| 6. Push to DockerHub  |
-| 7. Deploy to EC2      |
-+-----------------------+
-       |
-       v
- [DockerHub Registry]
-       |
-       v
-[EC2 Instance with Docker]
-       |
-       | Docker-compose runs
-       v
-+-----------------------+
-| Backend Container     |
-|-----------------------|
-| Node.js + Express App |
-| /health, /items,      |
-| /metrics              |
-+-----------------------+
-       |
-       v
-[Prometheus + Grafana (Optional)]
-       |
-       v
-Monitoring Dashboard & Alerts
+flowchart TD
+    A[Developer] -->|git push| B[GitHub Repository]
+    B -->|GitHub Actions CI/CD| C[CI/CD Pipeline]
+
+    subgraph C[CI/CD Pipeline]
+        C1[1. Checkout Code]
+        C2[2. Setup Node.js]
+        C3[3. Install deps]
+        C4[4. Run tests]
+        C5[5. Build Docker image]
+        C6[6. Push to DockerHub]
+        C7[7. Deploy to EC2]
+    end
+
+    C --> D[DockerHub Registry]
+    D --> E[EC2 Instance with Docker]
+    E -->|Docker-compose runs| F[Backend Container]
+
+    subgraph F[Backend Container]
+        F1[Node.js + Express App]
+        F2[/health, /items, /metrics]
+    end
+
+    F --> G[Prometheus + Grafana (Optional)]
+    G --> H[Monitoring Dashboard & Alerts]
+
