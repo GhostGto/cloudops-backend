@@ -23,7 +23,7 @@ It is a simple Node.js + Express API running inside Docker, with CI/CD configure
 ---
 
 ## 📂 Project Structure
-
+```
 src/
 └── app.js # Express API
 tests/
@@ -31,7 +31,7 @@ tests/
 Dockerfile
 package.json
 .github/workflows/ci-cd-backend.yml
-
+```
 
 ---
 
@@ -53,19 +53,13 @@ docker build -t project-backend .
 docker run -p 3000:3000 project-backend
 
 ⚙️ CI/CD Pipeline
-
 Runs on push to main
-
 Steps:
-
 Install dependencies
-
 Run tests
-
 Build Docker image
-
 Push to DockerHub
-
+```
    [Developer]
        |
        | git push
